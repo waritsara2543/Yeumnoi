@@ -11,3 +11,5 @@ window.fn.load = function(page) {
   content.load(page)
     .then(menu.close.bind(menu));
 };
+
+
