@@ -1,3 +1,4 @@
+
 var firebaseConfig = {
     apiKey: "AIzaSyDaIcVja2qOFzfpalsvfAlNVUh8usBpZIs",
     authDomain: "yuemnouy.firebaseapp.com",
@@ -10,4 +11,5 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+    firebase.analytics();
+  
