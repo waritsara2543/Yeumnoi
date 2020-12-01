@@ -16,15 +16,18 @@ var firebaseConfig = {
     var db = firebase.firestore();
 
     
-    //เรียกแล้วข้อมูลไม่ขึ้น
-   
+    //หน้า แต่ละประเภท
+    document.addEventListener('init', function (event) {
+      var page = event.target;
+      var id = $(this).attr('id');
+      if (page.id === 'category') {
     db.collection("Products").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         var card = `<div class="card ">
            <img class="card-img-top" src="${doc.data().Photo}" alt="">
            <div class="card-body">
-    <h4 class="card-title">${doc.data().Lender} - ${doc.data().Location} </h4>
-    <p class="card-text">${doc.data().Name}</p>
+    <h4 class="card-title"> ${doc.data().Name}</h4>
+    <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
     
   </div>
        </div>`;
@@ -32,3 +35,7 @@ var firebaseConfig = {
   
       });
     });
+   }
+  })
+  
+    
