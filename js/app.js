@@ -28,13 +28,24 @@ document.addEventListener('init', function (event) {
       db.collection("Products").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().Category === id) {
-            var card = `<div id="${doc.data().Name}" class="detail" onclick="openPlaylist(id)">
+            var card = `
+                        <div id="${doc.data().Name}" class="detail" onclick="openPlaylist(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
-                        <div class="card-body">
-                        <h4 class="card-title"> ${doc.data().Name}</h4>
+                     
+                        <div class="container">
+                        <div class="col-9">
+                        <h5 class="card-title"> ${doc.data().Name}</h5>
                         <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                         </div>
+                       
+                        <div class="col-3">
+                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
                         </div>
+                                             
+                       </div>
+
                         </div>
                         </div>`;
             $("#show").append(card);
@@ -57,10 +68,24 @@ function openPlaylist(id) {
       if (doc.data().Name === id) {
         var card = `<div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="">
-                        <div class="card-body">
-                        <h4 class="card-title"> ${doc.data().Name}</h4>
+                        <div class="container">
+                        <div class="">
+                        <h5 class="card-title"> ${doc.data().Name}</h5>
                         <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                        <p></p>
+                         </div>
+                       
+                        <div class="col-3">
+                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
+                        </div>
+                                             
+                       </div>
+
+
+                        <div class="col-12">
                         <p class="card-text">${doc.data().Detail}</p>
+                        </div>
                         </div>
                         </div>`;
         $("#showDetailList").append(card);
