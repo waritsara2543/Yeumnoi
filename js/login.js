@@ -20,7 +20,7 @@ $(function(){
         if (user) {
             // User is signed in.
             console.log(user);
-            window.location.href = 'signin1.html';
+            window.location.href = '../index.html';
         } 
     });
 
