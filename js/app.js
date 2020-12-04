@@ -28,11 +28,13 @@ document.addEventListener('init', function (event) {
       db.collection("Products").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().Category === id) {
-            var card = `<div class="card ">
-                        <img class="card-img-top" src="${doc.data().Photo}" alt="">
+            var card = `<div id="${doc.data().Name}" class="detail" onclick="openPlaylist(id)">
+                        <div class="card " >
+                        <img class="card-img-top" src="${doc.data().Photo}" alt="" >
                         <div class="card-body">
                         <h4 class="card-title"> ${doc.data().Name}</h4>
                         <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                        </div>
                         </div>
                         </div>`;
             $("#show").append(card);
@@ -41,7 +43,29 @@ document.addEventListener('init', function (event) {
         });
       });
     })
+
   }
 })
 
 
+//หน้า detail แต่ละสินค้า
+function openPlaylist(id) {
+  navcategory.pushPage('views/detail.html')
+  console.log(id);
+  db.collection("Products").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().Name === id) {
+        var card = `<div class="card " >
+                        <img class="card-img-top" src="${doc.data().Photo}" alt="">
+                        <div class="card-body">
+                        <h4 class="card-title"> ${doc.data().Name}</h4>
+                        <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                        <p class="card-text">${doc.data().Detail}</p>
+                        </div>
+                        </div>`;
+        $("#showDetailList").append(card);
+
+      }
+    });
+  });
+}
