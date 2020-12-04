@@ -1,3 +1,6 @@
 .container{
     display: flex;
 }
+.color{
+    background-color:#E53582;
+}
