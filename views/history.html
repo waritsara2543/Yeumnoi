@@ -7,6 +7,36 @@
         </div>
       </ons-toolbar>
   
-      <p>This is the history page.</p>
-   
+      <ons-tabbar swipeable position="auto">
+        <ons-tab page="borrowing.html" label="อยู่ระหว่างการยืม" icon="md-local-mall" active>
+        </ons-tab>
+        <ons-tab page="waiting.html" label="รอยืนยันการคืนสินค้า" icon="md-coffee">
+        </ons-tab>
+        <ons-tab page="successfull.html" label="คืนสินค้าสำเร็จ" icon="md-check-circle">
+        </ons-tab>
+      </ons-tabbar>
+
+      <template id="borrowing.html">
+        <ons-page id="Tab1">
+          <p style="text-align: center;">
+            This is the borrowing page.
+          </p>
+        </ons-page>
+      </template>
+      
+      <template id="waiting.html">
+        <ons-page id="Tab2">
+          <p style="text-align: center;">
+            This is the waiting page.
+          </p>
+        </ons-page>
+      </template>
+
+      <template id="successfull.html">
+        <ons-page id="Tab2">
+          <p style="text-align: center;">
+            This is the successfull page.
+          </p>
+        </ons-page>
+      </template>
 </ons-page>

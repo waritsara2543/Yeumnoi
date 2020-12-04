@@ -4,3 +4,7 @@
 .color{
     background-color:#E53582;
 }
+#incorrectDate{
+    text-align: center;
+    color: red;
+}

@@ -19,13 +19,14 @@
           <div class="alert-dialog-title">เลือกวันที่</div>
           <div class="alert-dialog-content">
             <br/>
-            <p>Start Date</p><input type="date" id="myDate" value="2020-12-04">
+            <p>Start Date</p><input type="date" id="startDate" value="2020-12-04" min="2020-12-04">
             <br/><br/>
-           <p>End Date</p><input type="date" id="myDate" value="2020-12-04">
+           <p>End Date</p><input type="date" id="endDate" value="2020-12-04"  min="2020-12-05">
           </div>
+          <p id="incorrectDate"></p>
           <div class="alert-dialog-footer">
-            <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
-            <ons-alert-dialog-button onclick="hideAlertDialog()">OK</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="cancleAlertDialog()">Cancel</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="OKAlertDialog()">OK</ons-alert-dialog-button>
           </div>
         </ons-alert-dialog>
       </template>
