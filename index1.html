@@ -258,6 +258,34 @@
 
                     </div>
                 </ons-toolbar>
+                 <ons-card>
+
+                    <div>
+                        <center>
+                            <img class="img" id="image" width="200 px" height="200 px" style="border-radius: 50%;">
+                            <input type="file" id="photo">
+                            <button onclick="uploadImage()">อัพโหลดรูป</button>
+                        </center>
+                    </div>
+                    <div class="title">
+                        Myself
+                    </div>
+                    <div class="content">
+                        Hi, I'm Myself!
+                    </div>
+
+                </ons-card>
+
+
+                <ons-card>
+                    <ons-list-header>บัญชีผู้ใช้</ons-list-header>
+                    <ons-list-item>ชื่อ - สกุล : <span id="displayname"></span></ons-list-item>
+                    <ons-list-item>Email : <span id="username"></span></ons-list-item>
+
+                    <ons-list-header><i class='fas fa-barcode'></i></ons-list-header>
+                    <ons-list-item modifier="chevron" tappable>สแกน QR code</ons-list-item>
+                </ons-card>
+
             </ons-page>
         </ons-navigator>
     </template>
