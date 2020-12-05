@@ -153,6 +153,221 @@
                                 </div>
                                 <b>Other</b>
                             </ons-col>
+                            <ons-col class="category-item" id="Other" width="25%"
+                            onclick="navhome.pushPage('views/search.html')">
+                            <div>
+                                <img style="margin-left: 10px; height: 50px; width:50px; "
+                                    src="../images/attach.png" alt=" ">
+
+                            </div>
+                            <b>Search</b>
+                        </ons-col>
+                        </ons-row>
+                    </div>
+                </ons-card>
+                <div class="header-label" style=" padding-left: 20px;">
+                    <h3><b>สินค้าใกล้คุณ</b></h3>
+                </div>
+                <ons-card>
+                    <div >
+                        
+                        <ons-carousel auto-scroll auto-scroll-ratio="0.5" auto-refresh swipeable overscrollable
+                            item-width="280px">
+                            <div id="carousel">
+                                
+                            </div>
+
+                        </ons-carousel>
+
+
+                    </div>
+                </ons-card>
+
+            </ons-page>
+        </ons-navigator>
+    </template>
+
+
+
+
+
+
+
+    <template id="profile.html">
+        <!-- <ons-navigator  id="myNavigator" page="profile.html"></ons-navigator> -->
+        <ons-navigator id="navprofile">
+            <ons-page id="profile">
+                <ons-toolbar>
+                    <div class="right">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Profile
+                    </div>
+                    <div class="left">
+                        <ons-toolbar-button id="push-button" onclick="navprofile.pushPage('views/history.html')">
+                            <img class="" src="images/history.png" alt="">
+                        </ons-toolbar-button>
+
+                    </div>
+                </ons-toolbar>
+                 <ons-card>
+
+                    <div>
+                        <center>
+                            <img class="img" id="image" width="200 px" height="200 px" style="border-radius: 50%;">
+                            <input type="file" id="photo">
+                            <button onclick="uploadImage()">อัพโหลดรูป</button>
+                        </center>
+                    </div>
+                    <div class="title">
+                        Myself
+                    </div>
+                    <div class="content">
+                        Hi, I'm Myself!
+                    </div>
+
+                </ons-card>
+
+
+                <ons-card>
+                    <ons-list-header>บัญชีผู้ใช้</ons-list-header>
+                    <ons-list-item>ชื่อ - สกุล : <span id="displayname"></span></ons-list-item>
+                    <ons-list-item>Email : <span id="username"></span></ons-list-item>
+
+                    <ons-list-header><i class='fas fa-barcode'></i></ons-list-header>
+                    <ons-list-item modifier="chevron" tappable>สแกน QR code</ons-list-item>
+                </ons-card>
+
+            </ons-page>
+        </ons-navigator>
+    </template>
+
+    <template id="about.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="right">
+                    <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    About
+                </div>
+            </ons-toolbar>
+              
+           <center> <h1> Prepared by</h1></center>
+         
+            <div class="about2" >
+   <img src="images/1.jpg" alt=""  width="200"  height="200"></div>   
+ <div class="about1">
+     <br>
+     <br>
+   นางสาววริศรา วิเชียรสร้าง
+   ID:6130613003 <br>
+   Tel.09X-XXX-XXXX
+ </div>
+</div>
+
+<div class ="about2"> 
+   <img src="images/2.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
+    <br>
+    <br>
+       นางสาวสรีมา ตันหยงตะมุง
+       ID:6130613004 <br>
+       Tel.09X-XXX-XXXX
+     </div>
+    </div>
+
+<div class="about2">
+<img src="images/3.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
+    <br>
+    <br>
+      นายสุทธวีร์ พรหมอินทร์
+      ID:6130613021 <br>
+      Tel.09X-XXX-XXXX
+     </div>
+    </div>
+
+<div class="about2">
+<img src="images/4.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
+    <br>
+    <br>
+    นางสาวรุสฟิรดาวส์ บากา
+    ID:6130613035 <br>
+    Tel.09X-XXX-XXXX
+     </div>
+    </div>
+    
+<div class="about2">
+<img src="images/5.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
+    <br>
+    <br>
+    นางสาวมาเรีย หมันล๊ะ
+    ID:6130613037 <br>
+    Tel.09X-XXX-XXXX
+     </div>
+    </div>
+          </div>
+        </ons-page>
+    </template>
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>
+" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px;height: 50px; width:50px; "
+                                        src="../images/repair-tools.png" alt=" ">
+                                </div>
+                                <b> Mechanic equipment</b>
+                            </ons-col>
+                            <ons-col class="category-item" id="Other" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/attach.png" alt=" ">
+
+                                </div>
+                                <b>Other</b>
+                            </ons-col>
                         </ons-row>
                     </div>
                 </ons-card>
