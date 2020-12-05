@@ -100,14 +100,41 @@ document.addEventListener('init', function (event) {
 
 })
 
-function search(input){
-      console.log(input);
-      $("#showsearch").empty();
-      db.collection("Products").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+function search(input) {
+  console.log(input);
+  $("#showsearch").empty();
+  db.collection("Products").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().Name === input) {
+        $("#showsearch").empty();
+        var card = `
+            <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
+            <div class="card " >
+            <img class="card-img-top" src="${doc.data().Photo}" alt="" >
          
-          if (doc.data().Name.substring (0,1)=== input.substring (0,1)) {
-            var card = `
+            <div class="container">
+            <div class="col-9">
+            <h5 class="card-title"> ${doc.data().Name}</h5>
+            <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+             </div>
+           
+            <div class="col-3">
+            <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+            <h6 class="card-text" > <font color="red">บาท </font> </h6>
+            </div>
+                                 
+           </div>
+
+            </div>
+            </div>`
+
+          ;
+
+
+
+        $("#showsearch").append(card);
+      } else if (doc.data().Name.substring(0, 1) === input.substring(0, 1)) {
+        var card = `
                         <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
@@ -128,26 +155,26 @@ function search(input){
                         </div>
                         </div>`
 
-              ;
+          ;
 
 
 
-            $("#showsearch").append(card);
+        $("#showsearch").append(card);
 
-          }
-        });
+      }
+    });
 
-      });
+  });
 }
 
-  //หน้า detail แต่ละสินค้า
-  function showDetail(id) {
-    navcategory.pushPage('views/detail.html')
-    console.log(id);
-    db.collection("Products").get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (doc.data().Name === id) {
-          var card = `<div class="card " >
+//หน้า detail แต่ละสินค้า
+function showDetail(id) {
+  navcategory.pushPage('views/detail.html')
+  console.log(id);
+  db.collection("Products").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().Name === id) {
+        var card = `<div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="">
                         <div class="container">
                         <div class="">
@@ -169,20 +196,20 @@ function search(input){
                         </div>
                         </div>
                         </div>`;
-          $("#showDetailList").append(card);
+        $("#showDetailList").append(card);
 
-        }
-      });
+      }
     });
-  }
-  //showdetail carousel
-  function showDetailCarousel(id) {
-    navhome.pushPage('views/detail.html')
-    console.log(id);
-    db.collection("Products").get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (doc.data().Name === id) {
-          var card = `<div class="card " >
+  });
+}
+//showdetail carousel
+function showDetailCarousel(id) {
+  navhome.pushPage('views/detail.html')
+  console.log(id);
+  db.collection("Products").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().Name === id) {
+        var card = `<div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="">
                         <div class="container">
                         <div class="">
@@ -204,18 +231,18 @@ function search(input){
                         </div>
                         </div>
                         </div>`;
-          $("#showDetailList").append(card);
+        $("#showDetailList").append(card);
 
-        }
-      });
+      }
     });
-  }
+  });
+}
 var storage = firebase.storage();
 
 
 function addImage() {
   // console.log("opopopopo");
-  
+
   const ref = storage.ref()
 
   const file = document.querySelector("#photo").files[0]
@@ -229,9 +256,9 @@ function addImage() {
       alert("อัปโหลดสำเร็จ")
       const image = document.querySelector('#image')
       image.src = url
-     
+
     }
-    
+
     )
 }
 
