@@ -28,7 +28,13 @@ document.addEventListener('init', function (event) {
       db.collection("Products").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().Category === id) {
-            var card = `
+            var card = `<p style="text-align: center; margin-top: 10px;">
+            <ons-search-input
+              placeholder="Search"
+              onchange="searchFunction(){console.log("search");}"
+              id="inputSearch"
+            ></ons-search-input>
+          </p>
                         <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
@@ -49,14 +55,17 @@ document.addEventListener('init', function (event) {
                         </div>
                         </div>`;
             $("#show").append(card);
-
+            
           }
         });
+
       });
     })
 
-   
-    
+
+
+
+
     //carusel index
     db.collection("Products").get().then((querySnapshot) => {
       $('#carousel').empty();
@@ -67,18 +76,25 @@ document.addEventListener('init', function (event) {
           <ons-list>
               <ons-list-item>
               <img  style="width: 100%;height: 170px;" src="${doc.data().Photo}" alt="" >
+              <p>${doc.data().Name}</p>
               </ons-list-item>
           </ons-list>
       </ons-carousel-item>`;
           $("#carousel").append(card);
 
         }
-          
+
       });
-  });
+    });
 
   }
 })
+
+// function searchFunction(){
+//   var input
+//     input = document.getElementById("inputSearch");
+    // .indexOf(filter)
+// }
 
 
 //หน้า detail แต่ละสินค้า
