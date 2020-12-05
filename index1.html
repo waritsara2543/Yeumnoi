@@ -75,10 +75,98 @@
                             <img style="width: 100%;height: 169px;" src="../images/kooku.jpg" alt="" id="">
                         </div>
                     </ons-carousel-item>
+                    <ons-carousel-item  modifier="nodivider" >
+                        <div >
+                            <img style="width: 100%;height: 169px;"  class="img" src="../images/12.12.jpg" alt="" id="">
+                        </div>
+                    </ons-carousel-item>
+                    <ons-carousel-item modifier="nodivider" >
+                        <div  >
+                            <img  style="width: 100%;height: 169px;" class=" img " src="../images/ปก.jpg" alt=" "  >
+                        </div>
+                    </ons-carousel-item>
+                </ons-carousel>
 
-                    
+                <div class="header-label" style=" padding-left: 20px;">
+                    <h3><b>หมวดหมู่</b></h3>
+                </div>
+                <ons-card>
+                    <div class="category">
+                        <ons-row id="category_list" class="text-center">
 
-                           
+
+                            <ons-col class="category-item" id="Clothing" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px;  "
+                                        src="../images/Clothing.png" alt=" ">
+                                </div>
+                                <b>Clothing</b>
+                            </ons-col>
+                            <ons-col class="category-item" id="Game&Hobbies" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/game-controller.png" alt=" ">
+
+                                </div>
+                                <b>Game&</b>
+                                <b>Hobbies</b>
+                            </ons-col>
+
+
+                            <ons-col class="category-item" id="Watch&Camera" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/photograph.png" alt=" ">
+                                </div>
+                                <b>Watch&</b>
+                                <b>Camera</b>
+                            </ons-col>
+
+                            <ons-col class="category-item" id="Laptop&Moblie" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/analytics.png" alt=" ">
+
+                                </div>
+                                <b>Laptop&</b>
+                                <b>Moblie</b>
+                            </ons-col>
+
+                            <ons-col class="category-item" id="Mechanic equipment" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px;height: 50px; width:50px; "
+                                        src="../images/repair-tools.png" alt=" ">
+                                </div>
+                                <b> Mechanic equipment</b>
+                            </ons-col>
+                            <ons-col class="category-item" id="Other" width="25%"
+                                onclick="navhome.pushPage('views/category.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/attach.png" alt=" ">
+
+                                </div>
+                                <b>Other</b>
+                            </ons-col>
+                        </ons-row>
+                    </div>
+                </ons-card>
+                <div class="header-label" style=" padding-left: 20px;">
+                    <h3><b>สินค้าใกล้คุณ</b></h3>
+                </div>
+                <ons-card>
+                    <div >
+                        
+                        <ons-carousel auto-scroll auto-scroll-ratio="0.5" auto-refresh swipeable overscrollable
+                            item-width="280px">
+                            <div id="carousel">
+                                
+                            </div>
 
                         </ons-carousel>
 
