@@ -16,7 +16,7 @@ firebase.analytics();
 var db = firebase.firestore();
 
 
-//หน้า แต่ละประเภท
+//หน้า แต่ละประเภท//ปุ่ม search ก่อนการ์ด
 document.addEventListener('init', function (event) {
   var page = event.target;
 
@@ -28,13 +28,7 @@ document.addEventListener('init', function (event) {
       db.collection("Products").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().Category === id) {
-            var card = `<p style="text-align: center; margin-top: 10px;">
-            <ons-search-input
-              placeholder="Search"
-              onchange="searchFunction(){console.log("search");}"
-              id="inputSearch"
-            ></ons-search-input>
-          </p>
+            var card = `
                         <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
@@ -75,8 +69,19 @@ document.addEventListener('init', function (event) {
           <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
           <ons-list>
               <ons-list-item>
-              <img  style="width: 100%;height: 170px;" src="${doc.data().Photo}" alt="" >
-              <p>${doc.data().Name}</p>
+              <img  style="width: 80%;height: 170px;" src="${doc.data().Photo}" alt="" >
+              <div class="container">
+                        <div class="">
+                        <h5 class="card-title"> ${doc.data().Name} <font color="green"> - ${doc.data().Location}</font></h5>
+                     
+                        <h6 class="card-text">   <font color="red">ราคา ${doc.data().Price} บาท</font></h6>
+                         </div>
+                       
+                        
+                         
+                        
+                      
+            
               </ons-list-item>
           </ons-list>
       </ons-carousel-item>`;
@@ -198,3 +203,20 @@ function showDetailCarousel(id) {
 //       })
 //   });
 // }
+
+
+
+
+
+
+
+///search
+
+      
+      ////   <p style="text-align: center; margin-top: 10px;">
+      ////  <ons-search-input
+      ////   placeholder="Search"
+      ////   onchange="searchFunction(){console.log("search");}"
+      ////   id="inputSearch"
+      ////   ></ons-search-input>
+      ////  </p>
