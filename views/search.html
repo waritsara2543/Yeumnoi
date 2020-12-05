@@ -1,0 +1,32 @@
+<ons-page id="search">
+    <ons-navigator id="navsearch">
+    <ons-page id="search">
+     
+      <ons-toolbar>
+    
+        <div class="left">
+          <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">
+          search
+        </div>
+        <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; margin-top: 10px;">
+        <ons-search-input
+          placeholder="Search"
+          id="inputSearch"
+          value=""
+          onchange="search(this.value)"
+
+        ></ons-search-input>
+      </p>
+      <div id="showsearch" ></div>
+     
+    </ons-page>
+    </ons-navigator>
+    </ons-page>

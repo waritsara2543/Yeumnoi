@@ -28,13 +28,7 @@ document.addEventListener('init', function (event) {
       db.collection("Products").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().Category === id) {
-            var card = `<p style="text-align: center; margin-top: 10px;">
-            <ons-search-input
-              placeholder="Search"
-              onchange="searchFunction(){console.log("search");}"
-              id="inputSearch"
-            ></ons-search-input>
-          </p>
+            var card = `
                         <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
@@ -53,13 +47,20 @@ document.addEventListener('init', function (event) {
                        </div>
 
                         </div>
-                        </div>`;
+                        </div>`
+
+              ;
+
+
+
             $("#show").append(card);
-            
+
           }
         });
 
       });
+
+
     })
 
 
@@ -88,23 +89,58 @@ document.addEventListener('init', function (event) {
     });
 
   }
+
+
 })
 
-// function searchFunction(){
-//   var input
-//     input = document.getElementById("inputSearch");
-    // .indexOf(filter)
-// }
+function search(input){
+      console.log(input);
+      $("#showsearch").empty();
+      db.collection("Products").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+         
+          if (doc.data().Name.substring (0,1)=== input.substring (0,1)) {
+            var card = `
+                        <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
+                        <div class="card " >
+                        <img class="card-img-top" src="${doc.data().Photo}" alt="" >
+                     
+                        <div class="container">
+                        <div class="col-9">
+                        <h5 class="card-title"> ${doc.data().Name}</h5>
+                        <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                         </div>
+                       
+                        <div class="col-3">
+                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
+                        </div>
+                                             
+                       </div>
+
+                        </div>
+                        </div>`
+
+              ;
 
 
-//หน้า detail แต่ละสินค้า
-function showDetail(id) {
-  navcategory.pushPage('views/detail.html')
-  console.log(id);
-  db.collection("Products").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.data().Name === id) {
-        var card = `<div class="card " >
+
+            $("#showsearch").append(card);
+
+          }
+        });
+
+      });
+}
+
+  //หน้า detail แต่ละสินค้า
+  function showDetail(id) {
+    navcategory.pushPage('views/detail.html')
+    console.log(id);
+    db.collection("Products").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().Name === id) {
+          var card = `<div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="">
                         <div class="container">
                         <div class="">
@@ -126,20 +162,20 @@ function showDetail(id) {
                         </div>
                         </div>
                         </div>`;
-        $("#showDetailList").append(card);
+          $("#showDetailList").append(card);
 
-      }
+        }
+      });
     });
-  });
-}
-//showdetail carousel
-function showDetailCarousel(id) {
-  navhome.pushPage('views/detail.html')
-  console.log(id);
-  db.collection("Products").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      if (doc.data().Name === id) {
-        var card = `<div class="card " >
+  }
+  //showdetail carousel
+  function showDetailCarousel(id) {
+    navhome.pushPage('views/detail.html')
+    console.log(id);
+    db.collection("Products").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().Name === id) {
+          var card = `<div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="">
                         <div class="container">
                         <div class="">
@@ -161,12 +197,12 @@ function showDetailCarousel(id) {
                         </div>
                         </div>
                         </div>`;
-        $("#showDetailList").append(card);
+          $("#showDetailList").append(card);
 
-      }
+        }
+      });
     });
-  });
-}
+  }
 
 
 
