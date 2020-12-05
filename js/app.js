@@ -16,7 +16,7 @@ firebase.analytics();
 var db = firebase.firestore();
 
 
-//หน้า แต่ละประเภท//ปุ่ม search ก่อนการ์ด
+//หน้า แต่ละประเภท
 document.addEventListener('init', function (event) {
   var page = event.target;
 
@@ -75,13 +75,7 @@ document.addEventListener('init', function (event) {
                         <h5 class="card-title"> ${doc.data().Name} <font color="green"> - ${doc.data().Location}</font></h5>
                      
                         <h6 class="card-text">   <font color="red">ราคา ${doc.data().Price} บาท</font></h6>
-                         </div>
-                       
-                        
-                         
-                        
-                      
-            
+                         </div>            
               </ons-list-item>
           </ons-list>
       </ons-carousel-item>`;
@@ -209,14 +203,3 @@ function showDetailCarousel(id) {
 
 
 
-
-///search
-
-      
-      ////   <p style="text-align: center; margin-top: 10px;">
-      ////  <ons-search-input
-      ////   placeholder="Search"
-      ////   onchange="searchFunction(){console.log("search");}"
-      ////   id="inputSearch"
-      ////   ></ons-search-input>
-      ////  </p>
