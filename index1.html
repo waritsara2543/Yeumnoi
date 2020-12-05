@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="lib/onsenui/onsenui.min.css">
     <link rel="stylesheet" href="lib/onsenui/onsen-css-components.min.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/about.css">
 
     <script src="lib/onsenui/onsenui.min.js"></script>
     <script src="lib/jquery/jquery-3.5.1.min.js"></script>
@@ -69,169 +70,15 @@
                     </div>
                 </ons-toolbar>
                 <ons-carousel swipeable auto-scroll overscrollable id="homemovie">
-                    <ons-carousel-item modifier="nodivider" id="Movie1">
+                    <ons-carousel-item modifier="nodivider">
                         <div>
                             <img style="width: 100%;height: 169px;" src="../images/kooku.jpg" alt="" id="">
                         </div>
                     </ons-carousel-item>
+
                     
-                    <!-- <ons-carousel-item  modifier="nodivider" id="Movie2">
-                        <div >
-                            <img class="img" src="../images/Maleficent Poster.jpg" alt="" id="">
-                        </div>
-                    </ons-carousel-item>
-                    <ons-carousel-item modifier="nodivider" id="Movie3">
-                        <div  >
-                            <img class=" img " src="../images/fantastic.jpg" alt=" "  >
-                        </div>
-                    </ons-carousel-item> -->
-                </ons-carousel>
 
-                <div class="header-label" style=" padding-left: 20px;">
-                    <h3><b>หมวดหมู่</b></h3>
-                </div>
-                <ons-card>
-                    <div class="category">
-                        <ons-row id="category_list" class="text-center">
-
-
-                            <ons-col class="category-item" id="Clothing" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px;  "
-                                        src="../images/Clothing.png" alt=" ">
-                                </div>
-                                <b>Clothing</b>
-                            </ons-col>
-                            <ons-col class="category-item" id="Game&Hobbies" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px; "
-                                        src="../images/game-controller.png" alt=" ">
-
-                                </div>
-                                <b>Game&</b>
-                                <b>Hobbies</b>
-                            </ons-col>
-
-
-                            <ons-col class="category-item" id="Watch&Camera" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px; "
-                                        src="../images/photograph.png" alt=" ">
-                                </div>
-                                <b>Watch&</b>
-                                <b>Camera</b>
-                            </ons-col>
-
-                            <ons-col class="category-item" id="Laptop&Moblie" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px; "
-                                        src="../images/analytics.png" alt=" ">
-
-                                </div>
-                                <b>Laptop&</b>
-                                <b>Moblie</b>
-                            </ons-col>
-
-                            <ons-col class="category-item" id="Mechanic equipment" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px;height: 50px; width:50px; "
-                                        src="../images/repair-tools.png" alt=" ">
-                                </div>
-                                <b> Mechanic equipment</b>
-                            </ons-col>
-                            <ons-col class="category-item" id="Other" width="25%"
-                                onclick="navhome.pushPage('views/category.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px; "
-                                        src="../images/attach.png" alt=" ">
-
-                                </div>
-                                <b>Other</b>
-                            </ons-col>
-                            <ons-col class="category-item" id="Other" width="25%"
-                                onclick="navhome.pushPage('views/search.html')">
-                                <div>
-                                    <img style="margin-left: 10px; height: 50px; width:50px; "
-                                        src="../images/attach.png" alt=" ">
-
-                                </div>
-                                <b>Search</b>
-                            </ons-col>
-                        </ons-row>
-                    </div>
-                </ons-card>
-                <div class="header-label" style=" padding-left: 20px;">
-                    <h3><b>สินค้าใกล้คุณ</b></h3>
-                </div>
-                <ons-card>
-                    <div >
-                        
-                        <ons-carousel auto-scroll auto-scroll-ratio="0.5" auto-refresh swipeable overscrollable
-                            item-width="280px">
-                            <div id="carousel">
-                                <!-- <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>
-                                <ons-carousel-item modifier="nodivider" class="recomended-item" id="${restaurant_id}">
-                                    <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
-                                    <ons-list>
-                                        <ons-list-item>
-                                            <h4>Loading. . .</h4>
-                                        </ons-list-item>
-                                    </ons-list>
-                                </ons-carousel-item>  -->
-
-                            </div>
+                           
 
                         </ons-carousel>
 
@@ -313,76 +160,64 @@
                     About
                 </div>
             </ons-toolbar>
-              จัดทำโดย
-          
-            <div class="left" >
-   <img src="images/1.jpg" alt=""  width="200"  height="200">    
-   <div style = "background-color:#FF6699; height:200px; width:214px; float:left;">
-<br>
-<br>
-
-
+              
+           <center> <h1> Prepared by</h1></center>
+         
+            <div class="about2" >
+   <img src="images/1.jpg" alt=""  width="200"  height="200"></div>   
+ <div class="about1">
+     <br>
+     <br>
    นางสาววริศรา วิเชียรสร้าง
-   6130613003
-   Email:s6130613003@phuket.psu.ac.th
+   ID:6130613003 <br>
    Tel.09X-XXX-XXXX
  </div>
 </div>
 
-ิ
-<div class ="right"> 
-   <img src="images/2.jpg" alt=""  width="200"  height="200"> 
-   <div style = "background-color:#FF6699; height:200px; width:214px; float:left;">
+<div class ="about2"> 
+   <img src="images/2.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
     <br>
-<br>
-
+    <br>
        นางสาวสรีมา ตันหยงตะมุง
-       6130613004
-       Email:s6130613004@phuket.psu.ac.th
+       ID:6130613004 <br>
        Tel.09X-XXX-XXXX
      </div>
     </div>
 
-ิ
-<div class="right">
-<img src="images/3.jpg" alt=""  width="200"  height="200">
-<div style = "background-color:#FF6699; height:200px; width:214px; float:left;">
+<div class="about2">
+<img src="images/3.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
     <br>
     <br>
-  
       นายสุทธวีร์ พรหมอินทร์
-      6130613021
-      Email:s6130613021@phuket.psu.ac.th
+      ID:6130613021 <br>
       Tel.09X-XXX-XXXX
      </div>
     </div>
 
-ิ
-<div class="right">
-<img src="images/4.jpg" alt=""  width="200"  height="200">
-<div style = "background-color:#FF6699; height:200px; width:214px; float:left;">
+<div class="about2">
+<img src="images/4.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
     <br>
-<br>
-
+    <br>
     นางสาวรุสฟิรดาวส์ บากา
-    6130613035
-    Email:s6130613035@phuket.psu.ac.th
+    ID:6130613035 <br>
     Tel.09X-XXX-XXXX
      </div>
     </div>
-ิ
-<div class="right">
-<img src="images/5.jpg" alt=""  width="200"  height="200">
-<div style = "background-color:#FF6699; height:200px; width:214px; float:left;">
-    <br>
-    <br>
     
+<div class="about2">
+<img src="images/5.jpg" alt=""  width="200"  height="200"></div>
+<div class="about1">
+    <br>
+    <br>
     นางสาวมาเรีย หมันล๊ะ
-    6130613037
-    Email:s6130613037@phuket.psu.ac.th
+    ID:6130613037 <br>
     Tel.09X-XXX-XXXX
      </div>
     </div>
+          </div>
         </ons-page>
     </template>
 
