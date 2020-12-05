@@ -1,52 +1,93 @@
-<link rel="stylesheet" href="../css/signin.css" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
-  type='text/css'>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="/images/icons/icon 192x192.png"> -->
 
-<onspage>
-  <div class="container">
-    <div class="testbox">
-      <h1>Registration</h1>
+  <title>Yeumnoi</title>
 
-      <form>
+  <!-- Manifest -->
+  <!-- <link rel="manifest" href="/manifest.json"> -->
 
+  <!-- import google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
 
-        <div>
-          <label id="icon" for="name"><i class="icon-envelope "></i></label>
-          <input type="text" name="name" id="emailRegis" placeholder="Email" required />
-        </div>
-        <div>
-          <label id="icon" for="name"><i class="icon-user"></i></label>
-          <input type="text" name="name" id="nameRegis" placeholder="Name" required />
-        </div>
-        <div>
-          <label id="icon" for="name"><i class="icon-shield"></i></label>
-          <input type="password" name="name" id="passwordRegis" placeholder="Password" required />
-        </div>
-        <div>
-          <label id="icon" for="name"><i class="icon-shield"></i></label>
-          <input type="password" name="name" id="repasswordRegis" placeholder="Confirm Password" required />
-        </div>
+  <!-- import bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <div class="gender">
-          <input type="radio" value="None" id="male" name="gender" checked />
-          <label for="male" class="radio" chec>Male</label>
-          <input type="radio" value="None" id="female" name="gender" />
-          <label for="female" class="radio">Female</label>
-        </div>
-        <a href="index.html" class="button">Register</a>
-        <a class="button" id="Logout">Log out </a>
+  <!-- import onsen ui -->
+  <!-- <link rel="stylesheet" href="/assets/css/onsenui.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/onsen-css-components.min.css"> -->
 
-        <ons-button onclick=window.location.href="login.html" style="width: 95%; margin: 0 auto;" id ="Logout">
-          Sign out
-      </ons-button>
-      </form>
+  <!-- import css -->
+  <!-- <link rel="stylesheet" href="/assets/css/general.css"> -->
+  <link rel="stylesheet" href="/css/signin.css">
+</head>
 
+<body>
+  <ons-page>
+    <ons-toolbar>
+      <div class="text-center">
+      <div class="center toolbars">
+        <circle class="circleColor center"><img src="../images/logo_YN.png" width="100px" ></circle>
+      </div>
     </div>
+    </ons-toolbar>
+    <div class="text-center">
+    <div class="margin-start">
+      <div class="title-SignIn Anton">
+        <ons-icon icon="md-chevron-left center center" id="btn-back" size="60px"></ons-icon>
+        Register
+      </div>
+    </div>
+    </div>
+    <div id="form">
+      <div class="form-group">
+        <div class="input-group-append">
+          <input type="text" class="form-control form-control-lg" id="name" placeholder="Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control form-control-lg" id="email" aria-describedby="emailHelp"
+          placeholder="Email">
+      </div>
+      <div class="form-group">
+        <div class="input-group-append">
+          <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group-append">
+          <input type="password" class="form-control form-control-lg" id="confirm" placeholder="Confirm Password">
+        </div>
+      </div>
 
-    
-  </div>
-  </div>
-  <script src="../js/regist.js"></script>
-</onspage>
+      <div class="form-group">
+        <ons-carousel item-width="150px" swipeable auto-scroll overscrollable id="carouselprofile">
+        </ons-carousel>
+      </div>
+      <button type="submit" id="signUp" class="Anton btn-signIn btn-lg btn-block">Register</button>
+    </div>
+  </ons-page>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+
+</html>
