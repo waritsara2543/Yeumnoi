@@ -82,15 +82,9 @@ document.addEventListener('init', function (event) {
                         <h5 class="card-title"> ${doc.data().Name} <font color="green"> - ${doc.data().Location}</font></h5>
                      
                         <h6 class="card-text">   <font color="red">ราคา ${doc.data().Price} บาท</font></h6>
-<<<<<<< HEAD
-                         </div>
-                       
-                         
-                        
-                      
-=======
+
                          </div>            
->>>>>>> b913c0d33eb54459675a289951c163a865248090
+
               </ons-list-item>
           </ons-list>
       </ons-carousel-item>`;
