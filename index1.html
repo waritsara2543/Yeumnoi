@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-       
+
 
 </head>
 
@@ -75,14 +75,14 @@
                             <img style="width: 100%;height: 169px;" src="../images/kooku.jpg" alt="" id="">
                         </div>
                     </ons-carousel-item>
-                    <ons-carousel-item  modifier="nodivider" >
-                        <div >
-                            <img style="width: 100%;height: 169px;"  class="img" src="../images/12.12.jpg" alt="" id="">
+                    <ons-carousel-item modifier="nodivider">
+                        <div>
+                            <img style="width: 100%;height: 169px;" class="img" src="../images/12.12.jpg" alt="" id="">
                         </div>
                     </ons-carousel-item>
-                    <ons-carousel-item modifier="nodivider" >
-                        <div  >
-                            <img  style="width: 100%;height: 169px;" class=" img " src="../images/ปก.jpg" alt=" "  >
+                    <ons-carousel-item modifier="nodivider">
+                        <div>
+                            <img style="width: 100%;height: 169px;" class=" img " src="../images/ปก.jpg" alt=" ">
                         </div>
                     </ons-carousel-item>
                 </ons-carousel>
@@ -156,14 +156,14 @@
                                 <b>Other</b>
                             </ons-col>
                             <ons-col class="category-item" id="Other" width="25%"
-                            onclick="navhome.pushPage('views/search.html')">
-                            <div>
-                                <img style="margin-left: 10px; height: 50px; width:50px; "
-                                    src="../images/search.png" alt=" ">
+                                onclick="navhome.pushPage('views/search.html')">
+                                <div>
+                                    <img style="margin-left: 10px; height: 50px; width:50px; "
+                                        src="../images/search.png" alt=" ">
 
-                            </div>
-                            <b>Search</b>
-                        </ons-col>
+                                </div>
+                                <b>Search</b>
+                            </ons-col>
                         </ons-row>
                     </div>
                 </ons-card>
@@ -171,12 +171,12 @@
                     <h3><b>สินค้าใกล้คุณ</b></h3>
                 </div>
                 <ons-card>
-                    <div >
-                        
+                    <div>
+
                         <ons-carousel auto-scroll auto-scroll-ratio="0.5" auto-refresh swipeable overscrollable
                             item-width="280px">
                             <div id="carousel">
-                                
+
                             </div>
 
                         </ons-carousel>
@@ -215,12 +215,12 @@
 
                     </div>
                 </ons-toolbar>
-                 <ons-card>
+                <ons-card>
 
                     <div>
                         <center>
-                             <img class="img" id="image" width="200 px" height="200 px" style="border-radius: 50%;" >
-                            <input type="file" id="photo" >
+                            <img class="img" id="image" width="200 px" height="200 px" style="border-radius: 50%;">
+                            <input type="file" id="photo">
                             <button onclick="addImage()">อัพโหลดรูป</button>
                         </center>
                     </div>
@@ -242,7 +242,17 @@
                     <ons-list-header><i class='fas fa-barcode'></i></ons-list-header>
                     <ons-list-item modifier="chevron" tappable>สแกน QR code</ons-list-item>
                 </ons-card>
+                <div class="bottom">
+                    <p>
+                        <center>
 
+
+                            <ons-button onclick=window.location.href="views/login.html"
+                                style="width: 95%; margin: 0 auto;" id="signOut">
+                                Sign out
+                            </ons-button>
+                        </center>
+                    </p>
             </ons-page>
         </ons-navigator>
     </template>
@@ -259,64 +269,66 @@
                     About
                 </div>
             </ons-toolbar>
-              
-           <center> <h1> Prepared by</h1></center>
-         
-            <div class="about2" >
-   <img src="images/1.jpg" alt=""  width="200"  height="200"></div>   
- <div class="about1">
-     <br>
-     <br>
-   นางสาววริศรา วิเชียรสร้าง
-   ID:6130613003 <br>
-   Tel.09X-XXX-XXXX
- </div>
-</div>
 
-<div class ="about2"> 
-   <img src="images/2.jpg" alt=""  width="200"  height="200"></div>
-<div class="about1">
-    <br>
-    <br>
-       นางสาวสรีมา ตันหยงตะมุง
-       ID:6130613004 <br>
-       Tel.09X-XXX-XXXX
-     </div>
-    </div>
+            <center>
+                <h1> Prepared by</h1>
+            </center>
 
-<div class="about2">
-<img src="images/3.jpg" alt=""  width="200"  height="200"></div>
-<div class="about1">
-    <br>
-    <br>
-      นายสุทธวีร์ พรหมอินทร์
-      ID:6130613021 <br>
-      Tel.09X-XXX-XXXX
-     </div>
-    </div>
+            <div class="about2">
+                <img src="images/1.jpg" alt="" width="200" height="200"></div>
+            <div class="about1">
+                <br>
+                <br>
+                นางสาววริศรา วิเชียรสร้าง
+                ID:6130613003 <br>
+                Tel.09X-XXX-XXXX
+            </div>
+            </div>
 
-<div class="about2">
-<img src="images/4.jpg" alt=""  width="200"  height="200"></div>
-<div class="about1">
-    <br>
-    <br>
-    นางสาวรุสฟิรดาวส์ บากา
-    ID:6130613035 <br>
-    Tel.09X-XXX-XXXX
-     </div>
-    </div>
-    
-<div class="about2">
-<img src="images/5.jpg" alt=""  width="200"  height="200"></div>
-<div class="about1">
-    <br>
-    <br>
-    นางสาวมาเรีย หมันล๊ะ
-    ID:6130613037 <br>
-    Tel.09X-XXX-XXXX
-     </div>
-    </div>
-          </div>
+            <div class="about2">
+                <img src="images/2.jpg" alt="" width="200" height="200"></div>
+            <div class="about1">
+                <br>
+                <br>
+                นางสาวสรีมา ตันหยงตะมุง
+                ID:6130613004 <br>
+                Tel.09X-XXX-XXXX
+            </div>
+            </div>
+
+            <div class="about2">
+                <img src="images/3.jpg" alt="" width="200" height="200"></div>
+            <div class="about1">
+                <br>
+                <br>
+                นายสุทธวีร์ พรหมอินทร์
+                ID:6130613021 <br>
+                Tel.09X-XXX-XXXX
+            </div>
+            </div>
+
+            <div class="about2">
+                <img src="images/4.jpg" alt="" width="200" height="200"></div>
+            <div class="about1">
+                <br>
+                <br>
+                นางสาวรุสฟิรดาวส์ บากา
+                ID:6130613035 <br>
+                Tel.09X-XXX-XXXX
+            </div>
+            </div>
+
+            <div class="about2">
+                <img src="images/5.jpg" alt="" width="200" height="200"></div>
+            <div class="about1">
+                <br>
+                <br>
+                นางสาวมาเรีย หมันล๊ะ
+                ID:6130613037 <br>
+                Tel.09X-XXX-XXXX
+            </div>
+            </div>
+            </div>
         </ons-page>
     </template>
 

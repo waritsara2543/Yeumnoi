@@ -9,11 +9,3 @@
 //     }
 //   };
 
-    $("#Logout").click(function () {
-        firebase.auth().signOut().then(function () {
-            window.location.href = "login.html"
-        }).catch(function (error) {
-            // An error happened.
-        });
-    })
-
