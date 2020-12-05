@@ -215,6 +215,7 @@ var storage = firebase.storage();
 
 function addImage() {
   // console.log("opopopopo");
+  
   const ref = storage.ref()
 
   const file = document.querySelector("#photo").files[0]
@@ -228,7 +229,10 @@ function addImage() {
       alert("อัปโหลดสำเร็จ")
       const image = document.querySelector('#image')
       image.src = url
-    })
+     
+    }
+    
+    )
 }
 
 
