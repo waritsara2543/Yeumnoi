@@ -214,33 +214,7 @@ function search(input){
 
 
 
-// function getmovieFavourite() {
-//   $("#showmovieFavorite").empty();
-//   db.collection("movies").get().then(function (querySnapshot) {
-//       querySnapshot.forEach(function (doc) {
-//           var user = firebase.auth().currentUser;
-//           const getUserFavorite = doc.data().uid
-//           if (getUserFavorite.indexOf(user.uid) != -1) {
-//               const result =
-//                   /*html*/
-//                   `<div class="col-6" style="padding-left:0px;padding-right:0px">
-//                       <div id="${doc.data().id}" class="imgFav d-flex align-items-end" style="background-image: url(${doc.data().posterURL}); " >
-//                           <div class="movietextbg">
-//                               <div class="movietitle-Fav">${doc.data().title}</div>
-//                           </div>
-//                       </div>
-//                   </div>`
-//               $("#showmovieFavorite").append(result)
-//           }
-//       });
-//       $("#showmovieFavorite div").click(function () {
-//           const movieTarget = $(this).attr('id');
-//           console.log(movieTarget);
-//           getmovieDetail(movieTarget);
-//           document.querySelector("#Navigator_favorite").pushPage("views/movieDetail.html");
-//       })
-//   });
-// }
+
 
 
 
