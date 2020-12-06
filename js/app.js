@@ -20,6 +20,42 @@ var db = firebase.firestore();
 document.addEventListener('init', function (event) {
   var page = event.target;
 
+  if (page.id === 'shoppingCart') {
+    db.collection("Products").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().Name === 'เสื้อยืดCeline') {
+          var card = `
+          <div class="card" id="frame">
+                        <div class="container">
+                        <div class="col-4" >
+                        <img class="card-img-top" src="${doc.data().Photo}" alt="" >
+                        <p class="card-text">${doc.data().Lender}  สถานที่: ${doc.data().Location}</p>
+                        </div>
+                        
+                        <div class="col-5">
+                        <p class="card-title"> ${doc.data().Name}</p>
+                        <p>วันที่ 10/12/20 ถึง 12/12/20</p>
+                        
+                         </div>
+                       
+                        <div class="col-3">
+                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
+                        </div>
+                        </div>
+                        </div>
+                        `
+
+            ;
+
+
+
+          $("#showShoppingCart").append(card);
+        };
+      })
+    })
+  }
+
   if (page.id === 'category' || page.id === 'home') {
     $('.category-item').off('click').on('click', function () {
       var id = $(this).attr('id');
@@ -30,7 +66,7 @@ document.addEventListener('init', function (event) {
           if (doc.data().Category === id) {
             var card = `
                         <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
-                        <div class="card " >
+                        <div class="card" id="frame">
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
                      
                         <div class="container">
@@ -75,7 +111,7 @@ document.addEventListener('init', function (event) {
           var card = `<ons-carousel-item modifier="nodivider" class="recomended-item" id="${doc.data().Name}"  onclick="showDetailCarousel(id)">
           <div class="thumbnail" style="background-color: rgb(161, 114, 140);"></div>
           <ons-list>
-              <ons-list-item>
+              <ons-list-item >
               <img  style="width: 80%;height: 170px;" src="${doc.data().Photo}" alt="" >
               <div class="container">
                         <div class="">
@@ -261,42 +297,54 @@ function addImage() {
 }
 
 
-$(function(){
+$(function () {
+  var firebaseConfig = {
+    apiKey: "AIzaSyDaIcVja2qOFzfpalsvfAlNVUh8usBpZIs",
+    authDomain: "yuemnouy.firebaseapp.com",
+    databaseURL: "https://yuemnouy.firebaseio.com",
+    projectId: "yuemnouy",
+    storageBucket: "yuemnouy.appspot.com",
+    messagingSenderId: "380855889580",
+    appId: "1:380855889580:web:dd628715a048c024f4f909",
+    measurementId: "G-D02XVV0RLY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // User is signed in.
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
 
-    displayName = user.displayName;
-    email = user.email;
-    photoUrl = user.photoURL;
-    console.log(displayName, email, photoUrl);
+      displayName = user.displayName;
+      email = user.email;
+      photoUrl = user.photoURL;
+      console.log(displayName, email, photoUrl);
 
-    $("#username").text(email);
-    $("#displayname").text(displayName);
-    $("#photo").attr("src", photoUrl);
+      $("#username").text(email);
+      $("#displayname").text(displayName);
+      $("#photo").attr("src", photoUrl);
 
 
-  } else {
-    // User is signed out.
-    window.location.href = "login.html";
-  }
-});
-document.addEventListener('init', function (event) {
-  var page = event.target;
-  if (page.id === 'profile') {
-    $("#signOut").click(function () {
-      console.log("Exit");
-      firebase.auth().signOut().then(function () {
-        window.location.href = "login.html"
-      }).catch(function (error) {
-        // An error happened.
+    } else {
+      // User is signed out.
+      window.location.href = "login.html";
+    }
+  });
+  document.addEventListener('init', function (event) {
+    var page = event.target;
+    if (page.id === 'profile') {
+      $("#signOut").click(function () {
+        console.log("Exit");
+        firebase.auth().signOut().then(function () {
+          window.location.href = "login.html"
+        }).catch(function (error) {
+          // An error happened.
+        });
       });
-    });
-  }
-});
+    }
+  });
 })
-
 
 
 

@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    
 }
 .color{
     background-color:#E53582;
@@ -7,4 +8,21 @@
 #incorrectDate{
     text-align: center;
     color: red;
+}
+#frame{
+    padding: 20px;
+    border: 5px;
+    border-style: solid;
+    border-color: #E53582;
+}
+.toolbar{
+    background-color:#E53582;
+   
+}
+.background-color{
+    background-color:#e5358188;
+    
+}
+.button{
+    background-color:#E53582;
 }

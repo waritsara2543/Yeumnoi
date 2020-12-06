@@ -33,6 +33,7 @@
     <ons-splitter>
         <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
             <ons-page>
+                
                 <ons-list>
                     <ons-list-item onclick="fn.load('home.html')" tappable>
                        หน้าแรก
@@ -53,14 +54,14 @@
     </ons-splitter>
     <template id="home.html">
         <ons-navigator id="navhome">
-            <ons-page id="home">
+            <ons-page id="home" >
                 <ons-toolbar>
                     <div class="right">
                         <ons-toolbar-button onclick="fn.open()">
                             <ons-icon icon="md-menu"></ons-icon>
                         </ons-toolbar-button>
                     </div>
-                    <div class="center">
+                    <div class="center" style="color: white;">
                         หน้าแรก
                     </div>
                     <div class="left">
@@ -69,6 +70,7 @@
                         </ons-toolbar-button>
                     </div>
                 </ons-toolbar>
+                <div class="background-color">
                 <ons-carousel swipeable auto-scroll overscrollable id="homemovie">
                     <ons-carousel-item modifier="nodivider">
                         <div>
@@ -183,7 +185,7 @@
 
                     </div>
                 </ons-card>
-
+            </div>
             </ons-page>
         </ons-navigator>
     </template>
@@ -197,14 +199,15 @@
     <template id="profile.html">
         <!-- <ons-navigator  id="myNavigator" page="profile.html"></ons-navigator> -->
         <ons-navigator id="navprofile">
-            <ons-page id="profile">
+            <ons-page id="profile" class="background-color">
                 <ons-toolbar>
                     <div class="right">
                         <ons-toolbar-button onclick="fn.open()">
                             <ons-icon icon="md-menu"></ons-icon>
                         </ons-toolbar-button>
+
                     </div>
-                    <div class="center">
+                    <div class="center" style="color: white;">
                         โปรไฟล์
                     </div>
                     <div class="left">
@@ -214,6 +217,7 @@
 
                     </div>
                 </ons-toolbar>
+            
                 <ons-card>
 
                     <div>
@@ -250,6 +254,7 @@
                             </ons-button>
                         </center>
                     </p>
+               
             </ons-page>
         </ons-navigator>
     </template>
@@ -262,7 +267,7 @@
                         <ons-icon icon="md-menu"></ons-icon>
                     </ons-toolbar-button>
                 </div>
-                <div class="center">
+                <div class="center" style="color: white;">
                     เกี่ยวกับเรา
                 </div>
             </ons-toolbar>
