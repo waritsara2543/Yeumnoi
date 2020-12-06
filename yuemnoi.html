@@ -35,13 +35,13 @@
             <ons-page>
                 <ons-list>
                     <ons-list-item onclick="fn.load('home.html')" tappable>
-                        Home
+                       หน้าแรก
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('profile.html')" tappable>
-                        Profile
+                        โปรไฟล์
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('about.html')" tappable>
-                        About
+                        เกี่ยวกับเรา
                     </ons-list-item>
                 </ons-list>
             </ons-page>
@@ -61,7 +61,7 @@
                         </ons-toolbar-button>
                     </div>
                     <div class="center">
-                        Home
+                        หน้าแรก
                     </div>
                     <div class="left">
                         <ons-toolbar-button id="push-button" onclick="navhome.pushPage('views/shoppingCart.html')">
@@ -102,7 +102,7 @@
                                     <img style="margin-left: 10px; height: 50px; width:50px;  "
                                         src="../images/Clothing.png" alt=" ">
                                 </div>
-                                <b>Clothing</b>
+                                <b>เสื้อผ้า</b>
                             </ons-col>
                             <ons-col class="category-item" id="Game&Hobbies" width="25%"
                                 onclick="navhome.pushPage('views/category.html')">
@@ -111,8 +111,7 @@
                                         src="../images/game-controller.png" alt=" ">
 
                                 </div>
-                                <b>Game&</b>
-                                <b>Hobbies</b>
+                                <b>งานอดิเรก</b>
                             </ons-col>
 
 
@@ -122,8 +121,8 @@
                                     <img style="margin-left: 10px; height: 50px; width:50px; "
                                         src="../images/photograph.png" alt=" ">
                                 </div>
-                                <b>Watch&</b>
-                                <b>Camera</b>
+                                <b>นาฬิกา&</b>
+                                <b>กล้อง</b>
                             </ons-col>
 
                             <ons-col class="category-item" id="Laptop&Moblie" width="25%"
@@ -133,8 +132,8 @@
                                         src="../images/analytics.png" alt=" ">
 
                                 </div>
-                                <b>Laptop&</b>
-                                <b>Moblie</b>
+                                <b>โน๊ตบุ้ค&</b>
+                                <b>มือถือ</b>
                             </ons-col>
 
 
@@ -144,7 +143,7 @@
                                     <img style="margin-left: 10px;height: 50px; width:50px; "
                                         src="../images/repair-tools.png" alt=" ">
                                 </div>
-                                <b> Mechanic equipment</b>
+                                <b>อุปกรณ์การช่าง</b>
                             </ons-col>
                             <ons-col class="category-item" id="Other" width="25%"
                                 onclick="navhome.pushPage('views/category.html')">
@@ -153,7 +152,7 @@
                                         src="../images/attach.png" alt=" ">
 
                                 </div>
-                                <b>Other</b>
+                                <b>อื่นๆ</b>
                             </ons-col>
                             <ons-col class="category-item" id="Other" width="25%"
                                 onclick="navhome.pushPage('views/search.html')">
@@ -162,7 +161,7 @@
                                         src="../images/search.png" alt=" ">
 
                                 </div>
-                                <b>Search</b>
+                                <b>ค้นหา</b>
                             </ons-col>
                         </ons-row>
                     </div>
@@ -206,7 +205,7 @@
                         </ons-toolbar-button>
                     </div>
                     <div class="center">
-                        Profile
+                        โปรไฟล์
                     </div>
                     <div class="left">
                         <ons-toolbar-button id="push-button" onclick="navprofile.pushPage('views/history.html')">
@@ -224,12 +223,10 @@
                             <button onclick="addImage()">อัพโหลดรูป</button>
                         </center>
                     </div>
-                    <div class="title">
-                        Myself
+                    <div id="username">
+                        
                     </div>
-                    <div class="content">
-                        Hi, I'm Myself!
-                    </div>
+                    
 
                 </ons-card>
 
@@ -249,7 +246,7 @@
 
                             <ons-button onclick=window.location.href="views/login.html"
                                 style="width: 95%; margin: 0 auto;" id="signOut">
-                                Sign out
+                                ออกจากระบบ
                             </ons-button>
                         </center>
                     </p>
@@ -266,7 +263,7 @@
                     </ons-toolbar-button>
                 </div>
                 <div class="center">
-                    About
+                    เกี่ยวกับเรา
                 </div>
             </ons-toolbar>
 
@@ -361,6 +358,7 @@
        https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
     <script src="js/app.js"></script>
+    
 
 
 </body>

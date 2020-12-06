@@ -53,8 +53,7 @@ var OKAlertDialog = function () {
     document.getElementById('my-alert-dialog')
       .hide();
   }
-
-
+  
 };
 var cancleAlertDialog = function () {
 
@@ -120,7 +119,6 @@ $(function () {
   });
 
 })
-
 
 
 

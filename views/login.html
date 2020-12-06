@@ -35,18 +35,20 @@
 
 
       <center><img style="width: 40%" src="../images/logo_YN.png"></center>
-      <center><h1>Welcome</h1></center>
-      
+      <center>
+        <h1>ยินดีต้อนรับ!!</h1>
+      </center>
+
 
       <div style="text-align: center; margin-top: 30px;">
         <p>
-          <ons-input id="email" modifier="underbar" placeholder="Username" float></ons-input>
+          <ons-input id="email" modifier="underbar" placeholder="อีเมล" float></ons-input>
         </p>
         <p>
-          <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+          <ons-input id="password" modifier="underbar" type="password" placeholder="รหัสผ่าน" float></ons-input>
         </p>
         <p style="margin-top: 30px;">
-          <ons-button id="signinemail">Log in</ons-button>
+          <ons-button id="signinemail">ลงชื่อเข้าใช้</ons-button>
         </p>
       </div>
 
@@ -54,12 +56,18 @@
         <h5>or</h5>
       </center>
 
-      <ons-button id="signingoogle"><center>Sign in with google <img style="width: 7%" src="../images/google.png"></center></ons-button>
+      <ons-button id="signingoogle">
+        <center>ลงชื่อเข้าใช้ด้วยบัญชี google <img style="width: 7%" src="../images/google.png"></center>
+      </ons-button>
 
-        <center><p>Don't have account </p></center>
-        <center><p style="margin-top: 30px;">
-        <ons-button onclick="navlogin.pushPage('register.html')">Register</ons-button>
-      </p></center>
+      <center>
+        <p>ยังไม่มีบัญชี </p>
+      </center>
+      <center>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="navlogin.pushPage('register.html')">ลงทะเบียน</ons-button>
+        </p>
+      </center>
 
       <ul class="bg-bubbles">
         <li></li>
@@ -85,7 +93,7 @@
       <ons-toolbar>
 
         <div class="left">
-          <ons-back-button>Back</ons-back-button>
+          <ons-back-button>ย้อนกลับ</ons-back-button>
         </div>
       </ons-toolbar>
 
@@ -93,22 +101,19 @@
 
       <div style="text-align: center; margin-top: 30px;">
         <p>
-          <ons-input id="email" modifier="underbar" placeholder="Username" float></ons-input>
+          <ons-input class="register" id="email-signup" modifier="underbar" placeholder="อีเมล" value="" float></ons-input>
         </p>
         <p>
-          <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+          <ons-input class="register" id="password-signup" modifier="underbar" type="รหัสผ่าน" placeholder="Password" float>
+          </ons-input>
         </p>
         <p>
-          <ons-input id="password" modifier="underbar" type="confirm" placeholder="Confirm Password" float></ons-input>
+          <ons-input id="password" modifier="underbar" type="password" placeholder="ยืนยันรหัสผ่าน" float></ons-input>
         </p>
         <p style="margin-top: 30px;">
-          <ons-button id="signUp" onclick="">Sign up</ons-button>
+          <ons-button id="signUp" onclick="signup()">ลงทะเบียน</ons-button>
         </p>
       </div>
-
-
-
-
     </ons-page>
   </template>
 

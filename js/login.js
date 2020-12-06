@@ -15,7 +15,14 @@ firebase.analytics();
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     var email = user.email;
-    console.log("user :", email, " signed in");
+     console.log("user :", email, " signed in");
+     displayName = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    console.log(displayName, email, photoUrl);
+    $("#username").text(email);
+    $("#displayname").text(displayName);
+    $("#image").attr("src", photoUrl);
 
   } else {
     // User is signed out.
@@ -23,12 +30,29 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
+ function signup () {
+   console.log("sign up");
+   var email = $("#email-signup").val();
+   var password = $("#password-signup").val();
+   console.log(email);
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+     window.location.href = '../yuemnoi.html';
+   })
+     .catch(function (error) {
+
+       console.log(error.message);
+    });
+
+};
+  
+
+
 
 $("#signinemail").click(function () {
   console.log("login");
   var email = $("#email").val();
   var password = $("#password").val();
-
+  
   firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
     window.location.href = '../yuemnoi.html';
   })
@@ -62,6 +86,8 @@ $("#signingoogle").click(function () {
     // ...
   });
 });
+
+
 
 
 

@@ -261,7 +261,7 @@ function addImage() {
 }
 
 
-
+$(function(){
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
@@ -295,6 +295,13 @@ document.addEventListener('init', function (event) {
     });
   }
 });
+})
+
+
+
+
+
+
 
 
 
