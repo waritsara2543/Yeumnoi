@@ -279,7 +279,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
   } else {
     // User is signed out.
-    window.location.href = "signin.html";
+    window.location.href = "login.html";
   }
 });
 document.addEventListener('init', function (event) {
@@ -288,7 +288,7 @@ document.addEventListener('init', function (event) {
     $("#signOut").click(function () {
       console.log("Exit");
       firebase.auth().signOut().then(function () {
-        window.location.href = "signin.html"
+        window.location.href = "login.html"
       }).catch(function (error) {
         // An error happened.
       });

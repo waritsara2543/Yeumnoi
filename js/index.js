@@ -1,3 +1,5 @@
+// splitter
+
 window.fn = {};
 
 window.fn.open = function () {
@@ -70,50 +72,7 @@ var notify = function () {
 };
 
 
-
-
-
-// $(function(){
-
-// 	var startDateTextBox = $('#dateStart');
-// 	var endDateTextBox = $('#dateEnd');
-
-// 	startDateTextBox.datepicker({ 
-// 		dateFormat: 'dd-M-yy',
-// 		onClose: function(dateText, inst) {
-// 			if (endDateTextBox.val() != '') {
-// 				var testStartDate = startDateTextBox.datetimepicker('getDate');
-// 				var testEndDate = endDateTextBox.datetimepicker('getDate');
-// 				if (testStartDate > testEndDate)
-// 					endDateTextBox.datetimepicker('setDate', testStartDate);
-// 			}
-// 			else {
-// 				endDateTextBox.val(dateText);
-// 			}
-// 		},
-// 		onSelect: function (selectedDateTime){
-// 			endDateTextBox.datetimepicker('option', 'minDate', startDateTextBox.datetimepicker('getDate') );
-// 		}
-// 	});
-// 	endDateTextBox.datepicker({ 
-// 		dateFormat: 'dd-M-yy',
-// 		onClose: function(dateText, inst) {
-// 			if (startDateTextBox.val() != '') {
-// 				var testStartDate = startDateTextBox.datetimepicker('getDate');
-// 				var testEndDate = endDateTextBox.datetimepicker('getDate');
-// 				if (testStartDate > testEndDate)
-// 					startDateTextBox.datetimepicker('setDate', testEndDate);
-// 			}
-// 			else {
-// 				startDateTextBox.val(dateText);
-// 			}
-// 		},
-// 		onSelect: function (selectedDateTime){
-// 			startDateTextBox.datetimepicker('option', 'maxDate', endDateTextBox.datetimepicker('getDate') );
-// 		}
-// 	});
-
-// });
+// ปุ่ม logout หน้า profile
 $(function () {
   var firebaseConfig = {
     apiKey: "AIzaSyDaIcVja2qOFzfpalsvfAlNVUh8usBpZIs",
