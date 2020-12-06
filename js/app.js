@@ -39,11 +39,15 @@ document.addEventListener('init', function (event) {
                          </div>
                        
                         <div class="col-3">
-                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
-                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
+                        <p class="card-text">560 บาท</p>
+                        <ons-button style="width: 80px;"  onclick="notify()">ชำระเงิน</ons-button>
+                        <br/>
+                        <ons-button style="width: 80px;" onclick="AlertDialog()"> ลบออก </ons-button>
                         </div>
                         </div>
                         </div>
+
+                        
                         `
 
             ;
@@ -312,25 +316,6 @@ $(function () {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-
-      displayName = user.displayName;
-      email = user.email;
-      photoUrl = user.photoURL;
-      console.log(displayName, email, photoUrl);
-
-      $("#username").text(email);
-      $("#displayname").text(displayName);
-      $("#photo").attr("src", photoUrl);
-
-
-    } else {
-      // User is signed out.
-      window.location.href = "login.html";
-    }
-  });
   document.addEventListener('init', function (event) {
     var page = event.target;
     if (page.id === 'profile') {

@@ -65,9 +65,9 @@ var cancleAlertDialog = function () {
 
 
 
-
 var notify = function () {
-  ons.notification.alert('This dialog was created with ons.notification');
+  ons.notification.alert('ชำระเงินเรียบร้อยแล้ว');
+  $('#showShoppingCart').hide();
 };
 
 

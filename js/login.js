@@ -12,23 +12,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    var email = user.email;
-     console.log("user :", email, " signed in");
-     displayName = user.displayName;
-    email = user.email;
-    photoUrl = user.photoURL;
-    console.log(displayName, email, photoUrl);
-    $("#username").text(email);
-    $("#displayname").text(displayName);
-    $("#image").attr("src", photoUrl);
-
-  } else {
-    // User is signed out.
-
-  }
-});
 
  function signup () {
    console.log("sign up");
