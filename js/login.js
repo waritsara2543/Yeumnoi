@@ -27,6 +27,15 @@ firebase.analytics();
     });
 
 };
+function signOut(){
+  console.log("Exit");
+  firebase.auth().signOut().then(function () {
+    window.location.href = "index.html"
+  }).catch(function (error) {
+    // An error happened.
+  });
+};
+
   
 
 
@@ -69,6 +78,8 @@ $("#signingoogle").click(function () {
     // ...
   });
 });
+
+
 
 
 
