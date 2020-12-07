@@ -21,14 +21,14 @@
   
       } else {
         // User is signed out.
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       }
     });
     
         $("#signOut").click(function () {
           console.log("Exit");
           firebase.auth().signOut().then(function () {
-            window.location.href = "index.html"
+            window.location.href = "home.html"
           }).catch(function (error) {
               // An error happened.
           });

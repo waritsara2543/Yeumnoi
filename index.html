@@ -31,112 +31,37 @@
 </head>
 
 <body>
-
-
-  <!-- <template id="login.html">  -->
-  <ons-navigator id="navlogin">
-    <ons-page id="login">
-
-      <div class="background-color">
-      <br/><br/><br/>
-      <center><img style="width: 40%" src="../images/logo_YN.png"></center>
-      <center>
-        <h1>ยินดีต้อนรับ!!</h1>
-      </center>
-
-
-      <div style="text-align: center; margin-top: 30px;">
-        <p>
-          <ons-input id="email" modifier="underbar" placeholder="อีเมล" float></ons-input>
-        </p>
-        <p>
-          <ons-input id="password" modifier="underbar" type="password" placeholder="รหัสผ่าน" float></ons-input>
-        </p>
-        <p style="margin-top: 30px;">
-          <ons-button id="signinemail">ลงชื่อเข้าใช้</ons-button>
-        </p>
-      </div>
-
-      <center>
-        <h5>or</h5>
-      </center>
-      <center>
-      <ons-button id="signingoogle" modifier="large" style="width: 300px;"> 
-        <center>ลงชื่อเข้าใช้ด้วยบัญชี google <img style="width: 7%" src="../images/google.png"></center>
-      </ons-button>
-    </center>
-    <br/>
-      <center>
-        <p>ยังไม่มีบัญชี </p>
-      </center>
-      <center>
-        <p style="margin-top: 30px;">
-          <ons-button onclick="navlogin.pushPage('register.html')">ลงทะเบียน</ons-button>
-        </p>
-      </center>
-
-      <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <br/><br/><br/><br/><br/>
+  <div class="background-color">
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <center><img style="width: 40%" src="../images/logo_YN.png"></center>
+    
+    <div style="text-align: center; margin-top: 30px;">
+      <p>
+        ยินดีต้อนรับ
+      </p>
+      <p style="margin-top: 30px;">
+        <!-- <ons-button id="" href="home.html">มาเริ่มกันเลย!</ons-button> -->
+        <a href="home.html" class="btn btn-dark" id="button">มาเริ่มกันเลย!</a>
+      </p>
     </div>
-    <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/service-worker.js')
-                  .then((reg) => {
-                      // console.log('Service worker registered.', reg);
-                  });
-          });
-      }
-  </script> 
-    </ons-page>
-  </ons-navigator>
 
 
-  <!-- </template> -->
-  <template id="register.html">
-    <ons-page id="register">
+    <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+  
 
-      <ons-toolbar>
-
-        <div class="left">
-          <ons-back-button>ย้อนกลับ</ons-back-button>
-        </div>
-      </ons-toolbar>
-      <div class="background-color">
-      <br/><br/><br/>
-
-      <center><img src="../images/logo_YN.png" width="100px"></center>
-
-      <div style="text-align: center; margin-top: 30px;">
-        <p>
-          <ons-input class="register" id="email-signup" modifier="underbar" placeholder="อีเมล" value="" float></ons-input>
-        </p>
-        <p>
-          <ons-input class="register" id="password-signup" modifier="underbar" type="รหัสผ่าน" placeholder="Password" float>
-          </ons-input>
-        </p>
-        <p>
-          <ons-input id="password" modifier="underbar" type="password" placeholder="ยืนยันรหัสผ่าน" float></ons-input>
-        </p>
-        <p style="margin-top: 30px;">
-          <ons-button id="signUp" onclick="signup()">ลงทะเบียน</ons-button>
-        </p>
-      </div>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>
-    </ons-page>
-  </template>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -149,11 +74,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
   <script src="service-worker.js"></script>
-  <script src="../js/login.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((reg) => {
+                    // console.log('Service worker registered.', reg);
+                });
+        });
+    }
+</script> 
   
 
 </body>
