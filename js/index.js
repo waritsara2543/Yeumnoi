@@ -101,7 +101,7 @@ $(function () {
 
     } else {
       // User is signed out.
-      window.location.href = "login.html"
+      window.location.href = "index.html"
     }
   });
   document.addEventListener('init', function (event) {
@@ -110,7 +110,7 @@ $(function () {
       $("#signOut").click(function () {
         console.log("Exit");
         firebase.auth().signOut().then(function () {
-          window.location.href = "login.html"
+          window.location.href = "index.html"
         }).catch(function (error) {
           // An error happened.
         });
