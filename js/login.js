@@ -13,6 +13,8 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 
+
+
  function signup () {
    console.log("sign up");
    var email = $("#email-signup").val();
@@ -27,16 +29,19 @@ firebase.analytics();
     });
 
 };
-function signOut(){
-  console.log("Exit");
-  firebase.auth().signOut().then(function () {
-    window.location.href = "index.html"
-  }).catch(function (error) {
-    // An error happened.
-  });
-};
 
-  
+// function signOut(){
+//   console.log("Exit");
+//   firebase.auth().signOut().then(function () {
+//     window.location.href = "index.html"
+    
+//   }).catch(function (error) {
+//     // An error happened.
+//   });
+// };
+
+
+ 
 
 
 
@@ -47,11 +52,21 @@ $("#signinemail").click(function () {
   
   firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
     window.location.href = '../yuemnoi.html';
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        var uid = user.uid;
+        console.log(uid);
+        
+      } 
+    });
+    
   })
     .catch(function (error) {
 
       // console.log(error.message);
     });
+
+    
 
 });
 
@@ -78,6 +93,10 @@ $("#signingoogle").click(function () {
     // ...
   });
 });
+
+
+  
+
 
 
 

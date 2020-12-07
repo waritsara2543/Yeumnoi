@@ -1,0 +1,26 @@
+{
+    "short_name": "YN",
+    "name": "Yeumnoi",
+    "icons": [
+      {
+        "src": "/images/logo_YN192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/logo_YN256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "/images/logo_YN512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#E53582",
+    "display": "standalone",
+    "theme_color": "#E53582"
+    
+  }

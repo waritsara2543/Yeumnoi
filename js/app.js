@@ -19,30 +19,34 @@ var db = firebase.firestore();
 //หน้า แต่ละประเภท
 document.addEventListener('init', function (event) {
   var page = event.target;
-
-  if (page.id === 'shoppingCart') {
-    db.collection("Products").get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (doc.data().Name === 'เสื้อยืดCeline') {
-          var card = `
-          <div class="card" id="frame">
+  firebase.auth().onAuthStateChanged(function (user) {
+    var uid = user.uid;
+    console.log(uid);
+    if (user) {
+      if (page.id === 'shoppingCart') {
+        db.collection("ShoppingCart").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            if (doc.data().uid === uid && doc.data().status ==="รอชำระเงิน") {
+              var card = `
+                      <div class="card" id="frame">
                         <div class="container">
                         <div class="col-4" >
-                        <img class="card-img-top" src="${doc.data().Photo}" alt="" >
-                        <p class="card-text">${doc.data().Lender}  สถานที่: ${doc.data().Location}</p>
+                        <img class="card-img-top" src="${doc.data().photo}" alt="" >
+                        <p class="card-title"> ${doc.data().productID}</p>
                         </div>
                         
                         <div class="col-5">
-                        <p class="card-title"> ${doc.data().Name}</p>
-                        <p>วันที่ 10/12/20 ถึง 12/12/20</p>
+                        
+                        <p>start date :${doc.data().startDate}</p>
+                        <p>end date :${doc.data().endDate}</p>
                         
                          </div>
                        
                         <div class="col-3">
-                        <p class="card-text">560 บาท</p>
-                        <ons-button style="width: 80px;"  onclick="notify()">ชำระเงิน</ons-button>
+                        <p class="card-text">รวมเป็นเงิน ${doc.data().total}  บาท</p>
+                        <ons-button style="width: 80px;" id="${doc.id}" onclick="notify(id)">ชำระเงิน</ons-button>
                         <br/>
-                        <ons-button style="width: 80px;" onclick="AlertDialog()"> ลบออก </ons-button>
+                        <ons-button style="width: 80px;" id="${doc.id}" onclick="deleted(id)"> ลบออก </ons-button>
                         </div>
                         </div>
                         </div>
@@ -50,15 +54,98 @@ document.addEventListener('init', function (event) {
                         
                         `
 
-            ;
+                ;
 
 
 
-          $("#showShoppingCart").append(card);
-        };
-      })
-    })
-  }
+              $("#showShoppingCart").append(card);
+            };
+          })
+        })
+      }
+    }
+  })
+  firebase.auth().onAuthStateChanged(function (user) {
+    var uid = user.uid;
+    console.log(uid);
+    if (user) {
+      if (page.id === 'borrowing') {
+        db.collection("ShoppingCart").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            if (doc.data().uid === uid && doc.data().status ==="อยู่ระหว่างยืม") {
+              var card = `
+                      <div class="card" id="frame">
+                        <div class="container">
+                        <div class="col-4" >
+                        <img class="card-img-top" src="${doc.data().photo}" alt="" >
+                        <p class="card-title"> ${doc.data().productID}</p>
+                        </div>
+                        
+                        <div class="col-5">
+                        
+                        <p>start date :${doc.data().startDate}</p>
+                        <p>end date :${doc.data().endDate}</p>
+                        
+                         </div>
+                       
+                        <div class="col-3">
+                        <p class="card-text">รวมเป็นเงิน ${doc.data().total}  บาท</p>
+                        <ons-button style="width: 85px;" id="${doc.id}" onclick="returned(id)">คืนสินค้า</ons-button>
+                        </div>
+                        </div>
+                        </div>
+
+                        
+                        `
+
+                ;
+
+
+
+              $("#showBorrowing").append(card);
+            };
+          })
+        })
+      }
+    }
+  })
+  firebase.auth().onAuthStateChanged(function (user) {
+    var uid = user.uid;
+    console.log(uid);
+    if (user) {
+      if (page.id === 'waiting') {
+        db.collection("ShoppingCart").get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            if (doc.data().uid === uid && doc.data().status ==="รอยืนยันการคืนสินค้า") {
+              var card = `
+                      <div class="card" id="frame">
+                        <div class="container">
+                        <div class="col-6" >
+                        <img class="card-img-top" src="${doc.data().photo}" alt="" >
+                        
+                        </div>
+                        
+                        <div class="col-6">
+                        <p class="card-title"> ${doc.data().productID}</p>
+                         </div>
+                        </div>
+                        </div>
+
+                        
+                        `
+
+                ;
+
+
+
+              $("#showWaiting").append(card);
+            };
+          })
+        })
+      }
+    }
+  })
+
 
   if (page.id === 'category' || page.id === 'home') {
     $('.category-item').off('click').on('click', function () {
@@ -148,7 +235,7 @@ function search(input) {
       if (doc.data().Name === input) {
         $("#showsearch").empty();
         var card = `
-            <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
+            <div id="${doc.data().Name}" class="detail" onclick="showDetailSearch(id)">
             <div class="card " >
             <img class="card-img-top" src="${doc.data().Photo}" alt="" >
          
@@ -173,7 +260,7 @@ function search(input) {
         $("#showsearch").append(card);
       } else if (doc.data().Name.substring(0, 1) === input.substring(0, 1)) {
         var card = `
-                        <div id="${doc.data().Name}" class="detail" onclick="showDetail(id)">
+                        <div id="${doc.data().Name}" class="detail" onclick="showDetailSearch(id)">
                         <div class="card " >
                         <img class="card-img-top" src="${doc.data().Photo}" alt="" >
                      
@@ -206,9 +293,14 @@ function search(input) {
 }
 
 //หน้า detail แต่ละสินค้า
+var productID;
+var price;
+var photo;
 function showDetail(id) {
   navcategory.pushPage('views/detail.html')
   console.log(id);
+  productID = id;
+  console.log(productID);
   db.collection("Products").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().Name === id) {
@@ -235,11 +327,52 @@ function showDetail(id) {
                         </div>
                         </div>`;
         $("#showDetailList").append(card);
-
+        price = doc.data().Price;
+        photo = doc.data().Photo;
       }
     });
   });
 }
+//show detail search
+function showDetailSearch(id) {
+  navsearch.pushPage('views/detail.html')
+  console.log(id);
+  productID = id;
+  console.log(productID);
+  db.collection("Products").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().Name === id) {
+        var card = `<div class="card " >
+                        <img class="card-img-top" src="${doc.data().Photo}" alt="">
+                        <div class="container">
+                        <div class="">
+                        <h5 class="card-title"> ${doc.data().Name}</h5>
+                        <p class="card-text">${doc.data().Lender} - ${doc.data().Location}</p>
+                        <p></p>
+                         </div>
+                       
+                        <div class="col-3">
+                        <h5 class="card-text">   <font color="red">${doc.data().Price}</font></h5>
+                        <h6 class="card-text" > <font color="red">บาท </font> </h6>
+                        </div>
+                                             
+                       </div>
+
+
+                        <div class="col-12">
+                        <p class="card-text">${doc.data().Detail}</p>
+                        </div>
+                        </div>
+                        </div>`;
+        $("#showDetailList").append(card);
+        price = doc.data().Price;
+        photo = doc.data().Photo;
+      }
+    });
+  });
+}
+
+
 //showdetail carousel
 function showDetailCarousel(id) {
   navhome.pushPage('views/detail.html')
@@ -298,11 +431,94 @@ function addImage() {
     }
 
     )
+} 
+function addtocart(startDate, endDate, totalDay) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    var uid = user.uid;
+    var total = price * totalDay;
+    if (user) {
+
+      console.log(startDate, endDate, totalDay, uid);
+      console.log(productID);
+      db.collection("ShoppingCart").add({
+        uid: uid,
+        productID: productID,
+        startDate: startDate,
+        endDate: endDate,
+        totalDay: totalDay,
+        total: total,
+        status: "รอชำระเงิน",
+        photo : photo
+      }) 
+        .then(function (docRef) {
+          console.log("สำเร็จ");
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        })
+     
+       update =function(){  
+        db.collection("ShoppingCart").add({
+        uid: uid,
+        productID: productID,
+        startDate: startDate,
+        endDate: endDate,
+        totalDay: totalDay,
+        total: total,
+        status: "อยู่ระหว่างยืม",
+        photo : photo});
+      }
+      returnProduct =function(){  
+        db.collection("ShoppingCart").add({
+        uid: uid,
+        productID: productID,
+        startDate: startDate,
+        endDate: endDate,
+        totalDay: totalDay,
+        total: total,
+        status: "รอยืนยันการคืนสินค้า",
+        photo : photo});
+      }
+
+    }
+  })
+}
+
+function notify(id) {
+
+  ons.notification.alert('ชำระเงินเรียบร้อยแล้ว');
+  
+  $('#showShoppingCart').hide();
+ 
+      update() ;
+    db.collection("ShoppingCart").doc(id).delete();
+ 
+  
+
+  
+};
+
+function deleted(id){
+  ons.notification.alert('ลบข้อมูลเรียบร้อยแล้ว');
+  $('#showShoppingCart').hide();
+  console.log(id);
+  db.collection("ShoppingCart").doc(id).delete();
+};
+
+function returned(id){
+
+  ons.notification.alert('คืนสินค้าเรียบร้อยแล้ว');
+  
+  $('#showBorrowing').hide();
+ 
+   returnProduct();
+    db.collection("ShoppingCart").doc(id).delete();
+  
 }
 
 
 
-  
+
 
 
 
